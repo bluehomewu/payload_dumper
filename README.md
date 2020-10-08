@@ -4,7 +4,7 @@ Script tested on Yandex Amber OTA's (full and incremental) under Linux(but may w
 ## System requirement
 
 - Python3, pip
-- google protobuf for python `pip install protobuf`
+- google protobuf for python `pip3 install protobuf`
 
 ## Guide
 
@@ -12,15 +12,14 @@ Script tested on Yandex Amber OTA's (full and incremental) under Linux(but may w
 - Download payload_dumper.py and update_metadata_pb2.py
 - Extract your OTA zip and place payload.bin in the same folder as these files.
 - Open PowerShell, Command Prompt, or Terminal depending on your OS.
-- Enter the following command: python -m pip install protobuf
-
+- Enter the following command: python3 -m pip install protobuf && pip3 install -r requirements.txt
 ### Full OTA
 
-- When that’s finished, enter this command: python payload_dumper.py payload.bin
+- When that’s finished, enter this command: python3 payload_dumper.py payload.bin
 - This will start to extract the images within the payload.bin file to the output folder you are in.
 
 ### Incremental OTA
 
 - Copy original images (from full OTA or dumped from devices) to old folder (with part name + .img, ex: boot.img, system.img)
-- run python payload_dumper.py --diff payload.bin
+- run python3 payload_dumper.py --diff payload.bin
 - file extracted to the output folder you are in.
